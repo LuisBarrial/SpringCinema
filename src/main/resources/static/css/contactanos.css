@@ -1,0 +1,140 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    font-size: 16px;
+    position: relative;
+    padding-bottom: 18em;
+    min-height: 100vh;
+}
+
+.centrar {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+/*Header*/
+.header {
+    box-sizing: border-box;
+    background-color: transparent;
+    width: 100%;
+}
+
+.barra {
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.barra_content {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.barra_logo {
+    height: 60px;
+    width: 160px;
+    margin-right: 100px;
+}
+
+.nav {
+    flex-direction: column;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.nav-link {
+    margin-left: 80px;
+    font-weight: 600;
+    padding: 16px 0;
+    text-decoration: none;
+    color: #000000;
+}
+
+.nav-link:hover {
+    border-bottom: solid red;
+    opacity: 1;
+}
+
+.nav-link-f {
+    margin-left: 80px;
+    margin-right: 90px;
+    font-weight: 600;
+    padding: 16px 0;
+    text-decoration: none;
+    color: #000000;
+}
+
+.nav-link-f:hover {
+    border-bottom: solid red;
+    opacity: 1;
+}
+
+.nav-link-icon {
+    margin-left: 60px;
+    font-weight: 600;
+    padding: 16px 0;
+    text-decoration: none;
+    color: #000000;
+}
+
+/*Footer*/
+.container {
+    margin: 0 auto;
+    max-width: 800px;
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.footer {
+    font-size: 0.85rem;
+    padding: 0.75em 0;
+    line-height: 1.6;
+    background: maroon;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer_social {
+    display: flex;
+    place-content: center;
+    font-size: 25px;
+}
+
+.footer_sections {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.footer_section {
+    box-sizing: border-box;
+    width: 25%;
+    padding: 15px 0;
+    flex-shrink: 0;
+}
+
+.footer_link {
+    color: aliceblue;
+    padding: 3px 15px;
+    display: block;
+    text-decoration: none;
+}
+
+.footer_link:hover {
+    color: rgb(0, 0, 0);
+    background: rgba(255, 255, 255, 0.25);
+}

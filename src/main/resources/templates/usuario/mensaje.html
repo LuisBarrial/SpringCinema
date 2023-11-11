@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/7a76b96ec6.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" th:href="@{/css/detalle1.css}">
+        <link rel="stylesheet" th:href="@{/css/UHF.css}">
+        <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap"
+            rel="stylesheet">
+        <title>Mensaje Enviado!</title>
+    </head>
+    <body>
+        <header class="header">
+            <div class="barra">
+                <div class="barra_content centrar">
+                    <a th:href="@{/}"><img class="barra_logo" th:src="@{/assets/EMPRESALOGO1.png}" alt="LogoEmpresa"></a>
+                    <ul class="nav">
+                        <li><a th:href="@{/usuario/cartelera}" class="nav-link">Cartelera</a></li>
+                        <li><a th:href="@{usuario/ubicaciones}" class="nav-link">Cines</a></li>
+                        <li><a th:href="@{/usuario/peliculas}" class="nav-link">Peliculas</a></li>
+                        <li><a th:href="@{usuario/nosotros}" class="nav-link-f">Nosotros</a></li>
+                        <li class="user"><a th:href="@{/login}" class="nav-link-icon"><i class="fa-solid fa-user"></i>
+                                <ul sec:authorize="isAuthenticated()" class="subuser">
+                                    <li><a><span sec:authentication="name">Username</span></a></li>
+                                    <li sec:authorize="hasAuthority('ROLE_ADMIN')"><a th:href="@{/admin}">Administracion de
+                                            pagina</a></li>
+                                    <li><a th:href="@{/logout}">Cerrar
+                                            sesión</a></li>
+                                </ul>
+                        </li>
+                        <li><a th:href="@{/usuario/contactanos}" class="nav-link-icon"><i class="fa-solid fa-phone"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+    <h2 style="text-align: center; padding: 25px"><b>Mensaje enviado correctamente</b></h2>
+
+    <footer class="footer">
+        <div class="footer_social">
+            <a href="https://www.facebook.com/CINERAMAPDS" target="_blank" class="nav-link-icon"><i class="fa-brands fa-facebook"></i></a>
+            <a href="register.html" class="nav-link-icon"><i class="fa-brands fa-instagram"></i></a>
+            <a href="register.html" class="nav-link-icon"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+        <div class="footer_sections container">
+            <a href="index.html"><img class="barra_logo" th:src="@{/assets/EMPRESALOGO1.png}" alt="LogoEmpresa"></a>
+            <div class="footer_section">
+                <a href="#" class="footer_link">Privacidad</a>
+                <a th:href="@{usuario/nosotros}" class="footer_link">Nosotros</a>
+                <a th:href="@{usuario/cartelera}" class="footer_link">Cartelera</a>
+                <a th:href="@{usuario/ubicaciones}" class="footer_link">Nuestros Cines</a>
+            </div>
+            <div class="footer_section">
+                <a th:href="@{/usuario/contactanos}" class="footer_link">Contactanos</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

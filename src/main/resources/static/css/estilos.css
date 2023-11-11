@@ -1,0 +1,217 @@
+@import "compass/css3";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+::selection {
+  background-color: rgb(136, 36, 36);
+}
+
+.tabbed {
+  width: 95%;
+  height: 1230px;
+  margin: 50px auto;
+  margin-left: 70px;
+}
+
+.tabbed>input {
+  display: none;
+}
+
+.tabbed>label {
+  display: block;
+  float: left;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background-color .3s;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 2px rgb(136, 36, 36);
+}
+
+.tabbed>label:hover,
+.tabbed>input:checked+label {
+  background: rgb(136, 36, 36);
+}
+
+.tabs {
+  clear: both;
+  perspective: 600px;
+}
+
+.tabs>div {
+  width: 95%;
+  height: 1200px;
+  position: absolute;
+  border: 2px solid rgb(136, 36, 36);
+  padding: 10px 30px 40px;
+  line-height: 1.4em;
+  opacity: 0;
+  transform: rotateX(-20deg);
+  transform-origin: top center;
+  transition: opacity .3s, transform 1s;
+  z-index: 0;
+}
+
+#tab-nav-1:checked~.tabs>div:nth-of-type(1),
+#tab-nav-2:checked~.tabs>div:nth-of-type(2),
+#tab-nav-3:checked~.tabs>div:nth-of-type(3) {
+  transform: rotateX(0);
+  opacity: 1;
+  z-index: 1;
+}
+
+@media screen and (max-width: 700px) {
+  .tabbed {
+    width: 400px;
+    height: 4390px;
+    margin-left: 10px;
+  }
+
+  .tabs>div {
+    width: 95%;
+    height: 4370px;
+    position: absolute;
+    border: 2px solid rgb(136, 36, 36);
+    padding: 10px 30px 40px;
+    line-height: 1.4em;
+    opacity: 0;
+    transform: rotateX(-20deg);
+    transform-origin: top center;
+    transition: opacity .3s, transform 1s;
+    z-index: 0;
+  }
+
+  .tabs>div h2 {
+    border-bottom: 2px solid rgb(136, 36, 36);
+    padding-bottom: .5em;
+  }
+}
+
+.contenedor {
+  align-items: center;
+  justify-content: center;
+}
+
+.boton1 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 50px;
+  background: red;
+  color: aliceblue;
+  font-family: 'Lato', sans-serif;
+  font-size: 10px;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+  transition: .3s ease all;
+  border-radius: 7px;
+  position: relative;
+  margin: 90px -50px;
+  top: 50%;
+  left: 50%;
+}
+
+.boton2 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 50px;
+  background: black;
+  color: aliceblue;
+  font-family: 'Lato', sans-serif;
+  font-size: 10px;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+  transition: .4s ease all;
+  border-radius: 7px;
+  position: absolute;
+  margin: 20px -30px;
+  top: 50%;
+  left: 44%;
+}
+
+
+.boton1:hover {
+  background: #b4a5a8;
+}
+
+.boton2:hover {
+  background: #b4a5a8;
+}
+
+.tabs h2 {
+  position: absolute;
+}
+
+.imagen p {
+  font-size: 18px;
+}
+
+.menu {
+  left: 350px;
+  position: absolute;
+  width: 59px;
+  height: 60px;
+  background: rgb(138, 18, 18);
+}
+
+.menu nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu a {
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  padding: 5px 10px;
+  display: block;
+}
+
+.menu a:hover {
+  background: rgba(44, 15, 15, 0.815);
+}
+
+.menu nav ul li ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu nav ul li ul {
+  position: absolute;
+  background: rgb(136, 36, 36);
+}
+
+.menu nav ul li ul li {
+  width: 250px;
+  position: relative;
+}
+
+.menu nav ul li ul {
+  display: none;
+
+}
+
+.menu nav ul li:hover>ul {
+  display: block;
+}
+
+.titlecine {
+  float: right;
+  margin-right: 110px;
+  margin-top: 30px;
+  color: rgb(245, 238, 236);
+  text-shadow: 0 0 10px rgb(138, 18, 18);
+}

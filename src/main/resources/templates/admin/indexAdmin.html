@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cinerama - Admin</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="">Cinerama</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/admin}">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/}">Vista user</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container text-center">
+        <div>
+            <h1>Bienvenido a la administracion de Cinerama!</h1>
+        </div>
+        <div class="mx-auto p-3" style="width: 500px;">
+            <ul class="list-group list-group-horizontal" >
+                <li class="list-group-item"><a class="h5" th:href="@{/admin/generos}">Lista de Generos</a></li>
+                <li class="list-group-item"><a class="h5" th:href="@{/admin/generos/nuevo}">Agregar Genero</a></li>
+            </ul>
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item"><a class="h6" th:href="@{/admin/clasificacion}">Lista de Clasificaciones</a></li>
+                <li class="list-group-item"><a class="h6" th:href="@{/admin/clasificacion/nuevo}">Agregar Clasificacion</a></li>
+            </ul>
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item"><a class="h6" th:href="@{/admin/estadosPelicula}">Lista de estados pelicula</a></li>
+                <li class="list-group-item"><a class="h6" th:href="@{/admin/estadosPelicula/nuevo}">Agregar estados pelicula</a></li>
+            </ul>
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item"><a class="h6" th:href="@{/admin/estadosCartelera}">Lista de estados cartelera</a></li>
+                <li class="list-group-item"><a class="h6" th:href="@{/admin/estadosCartelera/nuevo}">Agregar estados cartelera</a></li>
+            </ul>
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item"><a class="h5" th:href="@{/admin/peliculas}">Lista de peliculas</a></li>
+                <li class="list-group-item"><a class="h5" th:href="@{/admin/peliculas/nuevo}">Agregar peliculas</a></li>
+            </ul>
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item"><a class="h5" th:href="@{/admin/sedes}">Lista de sedes</a></li>
+                <li class="list-group-item"><a class="h5" th:href="@{/admin/sedes/nuevo}">Agregar sede</a></li>
+            </ul>
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item"><a class="h5" th:href="@{/admin/salas}">Lista de salas</a></li>
+                <li class="list-group-item"><a class="h5" th:href="@{/admin/salas/nueva}">Agregar salas</a></li>
+            </ul>
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item"><a class="h5" th:href="@{/admin/funciones}">Lista de funciones</a></li>
+                <li class="list-group-item"><a class="h5" th:href="@{/admin/funciones/nuevo}">Agregar funciones</a></li>
+            </ul>
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item"><a class="h5" th:href="@{/admin/usuarios}">Lista de usuarios</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

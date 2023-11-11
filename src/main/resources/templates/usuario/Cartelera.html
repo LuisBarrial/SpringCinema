@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/7a76b96ec6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/UHF.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/galeria.css">
+    <title>Cartelera</title>
+    <meta charset=utf-8>
+</head>
+
+<body>
+    <header class="header">
+        <div class="barra">
+            <div class="barra_content centrar">
+                <a th:href="@{/}"><img class="barra_logo" th:src="@{/assets/EMPRESALOGO1.png}"  alt="LogoEmpresa"></a>
+                <ul class="nav">
+                    <li><a th:href="@{/usuario/cartelera}" class="nav-link">Cartelera</a></li>
+                    <li><a th:href="@{/usuario/ubicaciones}" class="nav-link">Cines</a></li>
+                    <li><a th:href="@{/usuario/peliculas}" class="nav-link">Peliculas</a></li>
+                    <li><a th:href="@{/usuario/nosotros}" class="nav-link-f">Nosotros</a></li>
+                    <li class="user"><a th:href="@{/login}" class="nav-link-icon"><i class="fa-solid fa-user"></i>
+                            <ul sec:authorize="isAuthenticated()" class="subuser">
+                                <li><a><span sec:authentication="name">Username</span></a></li>
+                                <li sec:authorize="hasAuthority('ROLE_ADMIN')"><a th:href="@{/admin}">Administracion de
+                                        pagina</a></li>
+                                <li><a th:href="@{/logout}">Cerrar
+                                        sesión</a></li>
+                            </ul>
+                    </li>
+                    <li><a th:href="@{/usuario/contactanos}" class="nav-link-icon"><i class="fa-solid fa-phone"></i></a>
+                    </li>
+                </ul>
+                <label class="barra_nav_toggle">
+                    <i class="material-icons">menu</i>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <div class="tabbed">
+        <input type="radio" name="tabs" id="tab-nav-1" checked>
+        <label for="tab-nav-1">Quinde</label>
+        <input type="radio" name="tabs" id="tab-nav-2">
+        <label for="tab-nav-2">Plaza del sol</label>
+        <input type="radio" name="tabs" id="tab-nav-3">
+        <label for="tab-nav-3">Pre-Venta</label>
+        <div class="tabs">
+            <div>
+                <div class="galeria">
+                    <div class="conte">
+                        <div class="imagen" th:each="pelicula : ${listaPeliculas}" th:object="${pelicula}"
+                            th:if="${pelicula.sede.nombre} == 'El quinde' and ${pelicula.estadop.nombre} == 'Cartelera'  and ${pelicula.estadoCartelera.nombre} == 'Activo'">
+                            <img th:src="@{/assets/{filename}(filename=*{rutaPortada})}">
+                            <div class="overlay">
+                                <div class="contenedor">
+                                    <button class="boton1">
+                                        <a th:href="@{'/usuario/pelicula'+'/'+${pelicula.id}+'/sala'}"><i class="fa-solid fa-ticket"></i>Comprar</a>
+                                    </button>
+                                    <button class="boton2">
+                                        <a th:href="@{'/usuario/peliculas/detalles'+'/'+${pelicula.id}}"><i class="fa-regular fa-plus"></i>Detalles</a>
+                                    </button>
+                                </div>
+                            </div>
+                            <p align="center">
+                                <strong th:text="*{nombre}"> </strong>
+                                <br>
+                                <strong
+                                    th:text="*{generoPelicula.nombre}+'|'+*{duracion}+'|'+*{clasificacion.nombre}"></strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="galeria">
+                    <div class="conte">
+                        <div class="imagen" th:each="pelicula : ${listaPeliculas}" th:object="${pelicula}"
+                            th:if="${pelicula.sede.nombre} == 'Plaza del sol' and ${pelicula.estadop.nombre} == 'Cartelera'">
+                            <img th:src="@{/assets/{filename}(filename=*{rutaPortada})}">
+                            <div class="overlay">
+                                <div class="contenedor">
+                                    <button class="boton1">
+                                        <a th:href="@{'/usuario/pelicula'+'/'+${pelicula.id}+'/sala'}"><i class="fa-solid fa-ticket"></i>Comprar</a>
+                                    </button>
+                                    <button class="boton2">
+                                        <a th:href="@{'/usuario/peliculas/detalles'+'/'+${pelicula.id}}"><i class="fa-regular fa-plus"></i>Detalles</a>
+                                    </button>
+                                </div>
+                            </div>
+                            <p align="center">
+                                <strong th:text="*{nombre}"> </strong>
+                                <br>
+                                <strong
+                                    th:text="*{generoPelicula.nombre}+'|'+*{duracion}+'|'+*{clasificacion.nombre}"></strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="galeria">
+                    <div class="conte">
+                        <div class="imagen" th:each="pelicula : ${listaPeliculas}" th:object="${pelicula}"
+                            th:if="${pelicula.estadop.nombre} == 'Pre venta'">
+                            <img th:src="@{/assets/{filename}(filename=*{rutaPortada})}">
+                            <div class="overlay">
+                                <div class="contenedor">
+                                    <button class="boton1">
+                                        <a th:href="@{'/usuario/pelicula'+'/'+${pelicula.id}+'/sala'}"><i class="fa-solid fa-ticket"></i>Comprar</a>
+                                    </button>
+                                    <button class="boton2">
+                                        <a th:href="@{'/usuario/peliculas/detalles'+'/'+${pelicula.id}}"><i class="fa-regular fa-plus"></i>Detalles</a>
+                                    </button>
+                                </div>
+                            </div>
+                            <p align="center">
+                                <strong th:text="*{nombre}"> </strong>
+                                <br>
+                                <strong
+                                    th:text="*{generoPelicula.nombre}+'|'+*{duracion}+'|'+*{clasificacion.nombre}"></strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.6/prefixfree.min.js"></script>
+
+    <footer class="footer">
+        <div class="footer_social">
+            <a href="https://www.facebook.com/CINERAMAPDS" target="_blank" class="nav-link-icon"><i class="fa-brands fa-facebook"></i></a>
+            <a href="register.html" class="nav-link-icon"><i class="fa-brands fa-instagram"></i></a>
+            <a href="register.html" class="nav-link-icon"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+        <div class="footer_sections container">
+            <a href="index.html"><img class="barra_logo" th:src="@{/assets/EMPRESALOGO1.png}" alt="LogoEmpresa"></a>
+            <div class="footer_section">
+                <a href="#" class="footer_link">Privacidad</a>
+                <a th:href="@{/usuario/nosotros}" class="footer_link">Nosotros</a>
+                <a th:href="@{/usuario/cartelera}" class="footer_link">Cartelera</a>
+                <a th:href="@{/usuario/ubicaciones}" class="footer_link">Nuestros Cines</a>
+            </div>
+            <div class="footer_section">
+                <a th:href="@{/usuario/contactanos}" class="footer_link">Contactanos</a>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/UHF.js"></script>
+</body>
+
+</html>

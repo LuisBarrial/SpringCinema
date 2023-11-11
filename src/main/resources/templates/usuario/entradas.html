@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/estilosAs.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,200&family=Roboto&display=swap"
+        rel="stylesheet">
+    <title>[[${pelicula.nombre}]] - Entradas</title>
+</head>
+
+<body>
+    <header class="header-size">
+        <nav class="nav-icons-exit">
+            <div>
+                <a href=""><img th:src="@{/img/retroceder.png}" class="back-img" alt="imagen-retroceso"></a>
+            </div>
+            <div class="progress-bar">
+                <div class="progreso1" id="progreso">
+
+                </div>
+                <div class="circle active">
+                    Entrada
+                </div>
+                <div class="circle">
+                    Asiento
+                </div>
+                <div class="circle">
+                    Pago
+                </div>
+            </div>
+            <div>
+                <a th:href="@{'/usuario/peliculas/detalles'+'/'+${pelicula.id}}"><img th:src="@{/img/salida.png}" alt="boton-salida" class="back-img"></a>
+            </div>
+
+        </nav>
+    </header>
+    <div class="dflex" th:object="${pelicula}">
+        <div id="bordeado">
+
+            <img class="imagenpeli" th:src="@{/assets/{filename}(filename=*{rutaPortada})}" th:alt="*{rutaPortada}">
+
+            <h4 th:text="*{nombre}"></h4>
+
+        </div>
+        <div id="sx" class="divTabla">
+
+            <div class="container-card">
+                <div class="card1">
+                    <span>Entrada General</span>
+                    <br>
+                    General
+                    <span>S/15</span>
+                    <br>
+                    <button class="button-entries1" onclick="clicked()">
+
+                    </button>
+                    <span id="cantidadentradas">0</span>
+                    <button class="button-entries2" onclick="clicked2()">
+
+                    </button>
+                </div>
+            </div>
+
+            <div class="txt-selected-entries">
+                &nbsp;&nbsp;&nbsp; Entradas seleccionadas <span id="cantidadj"></span>
+            </div>
+
+            <th:block th:object="${pelicula}">
+                <a th:href="@{'asiento'}">
+                    <button onclick="registrarUsuarios()" class="buy-button01" id="siguiente"> <span class="txt-buy">Continuar</span>
+                    </button>
+                </a>
+            </th:block>
+
+        </div>
+    </div>
+    <form action="submit">
+        <input type='hidden' name='seleccionImagen' value='' />
+    </form>
+    <p></p>
+    <script src="/js/alert.js"> </script>
+    <script src="/js/registrar.js"> </script>
+
+</body>
+
+</html>

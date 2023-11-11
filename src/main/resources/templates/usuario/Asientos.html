@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link href="/css/estilosAs.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,200&family=Roboto&display=swap" rel="stylesheet">
+    <title>[[${pelicula.nombre}]] - Asientos</title>
+</head>
+<body>
+    <header class="header-size">
+    <nav class="nav-icons-exit">
+            <div>
+                <a href=""><img th:src="@{/img/retroceder.png}" class="back-img" alt="imagen-retroceso"></a>
+            </div>
+            <div class="progress-bar">
+                <div class="progreso" id="progreso">
+
+                </div>
+                <div class="circle">
+                Entrada
+                </div>
+                <div class="circle active">
+                Asiento
+                </div>
+                <div class="circle">
+                Pago
+                </div>
+            </div>
+            <div>
+                <a th:href="@{'/usuario/peliculas/detalles'+'/'+${pelicula.id}}"><img th:src="@{/img/salida.png}" alt="boton-salida" class="back-img"></a>
+            </div>
+        
+    </nav>
+    </header>
+    <div class="dflex" th:object="${pelicula}">
+        <div id="bordeado">
+
+            <img class="imagenpeli" th:src="@{/assets/{filename}(filename=*{rutaPortada})}" th:alt="*{rutaPortada}">
+
+            <h4 th:text="*{nombre}"></h4>
+            
+        </div>
+        <div id="sx" class="divTabla">
+            <table class="tablat" >
+            <tbody>
+                <tr>
+                    <td colspan="19" style="height: 20vh;">
+                    <div class="fondo">
+                        <div class="label">
+                            Pantalla
+                        </div>
+                    </div>
+                    </td>
+                </tr>
+                <tr id="trd">
+
+                    <td>
+                        
+                        <div class="txtguia">
+                            <div class="txtguia2"> A </div>
+                        </div>
+
+                    </td>
+                    <td>
+                        <div id="A1" class="imagencirculo" >
+                            <div name="as" class="divtexto">A1</div>
+                            <img id="imagen1" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg==" 
+                            alt="" class="imagen">
+                        </div>
+
+                    </td>
+                    <td>
+                        
+                        <div id="A2"  class="imagencirculo">
+                            <div class="divtexto"> A2</div>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg==" 
+                            alt="" class="imagen">
+                        </div>
+
+                    </td>
+                    <td>
+                        
+                        <div id="A3"  class="imagencirculo">
+                            <div class="divtexto"> A3</div>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg==" 
+                            alt="" class="imagen">
+                        </div>
+
+                    </td>
+                    <td>
+                        
+
+                    </td>
+                    <td>
+                        
+                        <div id="A4" class="imagencirculo">
+                            <div class="divtexto"> A4 </div>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg==" 
+                            alt="" class="imagen">
+                        </div>
+
+                    </td>
+                    <td>
+                        
+                        <div id="A5" class="imagencirculo">
+                            <div class="divtexto"> A5 </div>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg==" 
+                            alt="" class="imagen">
+                        </div>
+
+                    </td>
+                    <td>
+                        
+                        <div id="A6" class="imagencirculo">
+                            <div class="divtexto"> A6 </div>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg==" 
+                            alt="" class="imagen">
+                        </div>
+
+                    </td>
+                    <td>
+                        
+                        <div id="A7" class="imagencirculo">
+                            <div class="divtexto"> A7 </div>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg==" 
+                            alt="" class="imagen">
+                        </div>
+
+                    </td>
+                    <td>
+                        
+                        <div id="A8" class="imagencirculo">
+                            <div class="divtexto"> A8 </div>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg==" 
+                            alt="" class="imagen">
+                        </div>
+
+                    </td>
+                    <td>
+                        
+                        <div id="A9" class="imagencirculo">
+                            <div class="divtexto"> A9 </div>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg==" 
+                            alt="" class="imagen">
+                        </div>
+
+                    </td>
+                    <td>
+                        
+                        <div id="A10" class="imagencirculo">
+                            <div class="divtexto"> A10 </div>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg==" 
+                            alt="" class="imagen">
+                        </div>
+
+                    </td>
+                    <td>
+                        
+                        <div id="A11" class="imagencirculo">
+                            <div class="divtexto"> A11 </div>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg==" 
+                            alt="" class="imagen">
+                        </div>
+
+                    </td>
+                    <td>
+                        
+                        <div id="A12" class="imagencirculo">
+                            <div class="divtexto"> A12 </div>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg==" 
+                            alt="" class="imagen">
+                        </div>
+
+                    </td>
+                    <td>
+                        
+
+                    </td>
+                    <td>
+                        
+                        <div id="A13" class="imagencirculo">
+                            <div class="divtexto"> A13 </div>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg==" 
+                            alt="" class="imagen">
+                        </div>
+
+                    </td>
+                    <td>
+                        
+                        <div id="A14" class="imagencirculo">
+                            <div class="divtexto"> A14 </div>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg==" 
+                            alt="" class="imagen">
+                        </div>
+
+                    </td>
+                    <td>
+                        
+                        <div id="A15" class="imagencirculo">
+                            <div class="divtexto"> A15 </div>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg==" 
+                            alt="" class="imagen">
+                        </div>
+
+                    </td>
+                    
+                    <td>
+                        <div class="txtguia">
+                            <div class="txtguia2"> A </div>
+
+                        </div>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                        <div class="txtguia">
+                            <div class="txtguia2">B </div>
+
+                        </div>
+
+
+                    </td>
+                    <td>
+                        
+                        <div id="B1" class="imagencirculo">
+                            <div class="divtexto"> B1 </div>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg==" 
+                            alt="" class="imagen">
+                        </div>
+
+                    </td>
+                    <td>
+                        
+                        <div id="B2" class="imagencirculo">
+                            <div class="divtexto"> B2 </div>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg==" 
+                            alt="" class="imagen">
+                        </div>
+
+                    </td>
+                    <td>
+                        
+                        <div id="B3" class="imagencirculo">
+                            <div class="divtexto"> B3 </div>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg==" 
+                            alt="" class="imagen">
+                        </div>
+
+                    </td>
+                    <td>
+                        
+
+                    </td>
+                    <td>
+                        
+                        <div id="B4" class="imagencirculo">
+                            <div class="divtexto"> B4 </div>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg==" 
+                            alt="" class="imagen">
+                        </div>
+
+                    </td>
+                    <td>
+                        
+                        <div id="B5" class="imagencirculo">
+                            <div class="divtexto"> B5 </div>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg==" 
+                            alt="" class="imagen">
+                        </div>
+
+                    </td>
+                    <td>
+                        
+                        <div  id="B6" class="imagencirculo">
+                            <div class="divtexto"> B6 </div>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg==" 
+                            alt="" class="imagen">
+                        </div>
+
+                    </td>
+                    <td>
+                        
+                        <div id="B7" class="imagencirculo">
+                            <div class="divtexto"> B7</div>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg==" 
+                            alt="" class="imagen">
+                        </div>
+
+                    </td>
+                    <td>
+                        
+                        <div id="B8" class="imagencirculo">
+                            <div class="divtexto"> B8 </div>
+                        </div>
+
+                    </td>
+                    <td>
+                        
+                        <div id="B9" class="imagencirculo">
+                            <div class="divtexto"> B9 </div>
+                        </div>
+
+                    </td>
+                    <td>
+                        
+                        <div id="B10" class="imagencirculo">
+                            <div class="divtexto"> B10 </div>
+                        </div>
+
+                    </td>
+                    <td>
+                        
+                        <div id="B11" class="imagencirculo">
+                            <div class="divtexto"> B11 </div>
+                        </div>
+
+                    </td>
+                    <td>
+                        
+                        <div id="B12" class="imagencirculo">
+                            <div class="divtexto"> B12 </div>
+                        </div>
+
+                    </td>
+                    <td>
+                        
+                
+
+                    </td>
+                    <td>
+                        
+                        <div id="B13" class="imagencirculo">
+                            <div class="divtexto"> B13 </div>
+                        </div>
+
+                    </td>
+                    <td>
+                        
+                        <div id="B14" class="imagencirculo">
+                            <div class="divtexto"> B14 </div>
+                        </div>
+
+                    </td>
+                    <td>
+                        
+                        <div id="B15" class="imagencirculo">
+                            <div class="divtexto"> B15 </div>
+                        </div>
+
+                    </td>
+                    
+                    <td>
+                        <div class="txtguia">
+                            <div class="txtguia2"> B </div>
+                        </div>
+
+
+                    </td>
+                </tr> 
+                <tr>
+                    <td>
+                        
+                        <div class="txtguia">
+                            <div class="txtguia2">C </div>
+
+                        </div>
+
+
+                    </td>
+                    <td><div id="C1" class="imagencirculo">    <div class="divtexto">C1</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="C2" class="imagencirculo">    <div class="divtexto">C2</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="C3" class="imagencirculo">    <div class="divtexto">C3</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td>
+                    </td>
+                    <td><div id="C4" class="imagencirculo">    <div class="divtexto">C4</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="C5" class="imagencirculo">    <div class="divtexto">C5</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="C6" class="imagencirculo">    <div class="divtexto">C6</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="C7" class="imagencirculo">    <div class="divtexto">C7</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="C8" class="imagencirculo">    <div class="divtexto">C8</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="C9" class="imagencirculo">    <div class="divtexto">C9</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="C10" class="imagencirculo">    <div class="divtexto">C10</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="C11" class="imagencirculo">    <div class="divtexto">C11</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="C12" class="imagencirculo">    <div class="divtexto">C12</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+
+                    <td>
+                    </td>
+                    <td><div id="C13" class="imagencirculo">    <div class="divtexto">C13</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="C14" class="imagencirculo">    <div class="divtexto">C14</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="C15" class="imagencirculo">    <div class="divtexto">C15</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+
+
+                    <td>
+                    <div class="txtguia">
+                            <div class="txtguia2"> C </div>
+                        </div>
+
+
+                    </td>
+                </tr> 
+                <tr>
+                    <td>
+                        
+                        <div class="txtguia">
+                            <div class="txtguia2">D </div>
+
+                        </div>
+
+
+                    </td>
+                    <td><div id="D1" class="imagencirculo">    <div class="divtexto">D1</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="D2" class="imagencirculo">    <div class="divtexto">D2</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="D3" class="imagencirculo">    <div class="divtexto">D3</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td>
+                    </td>
+                    <td><div id="D4" class="imagencirculo">    <div class="divtexto">D4</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="D5" class="imagencirculo">    <div class="divtexto">D5</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="D6" class="imagencirculo">    <div class="divtexto">D6</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="D7" class="imagencirculo">    <div class="divtexto">D7</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="D8" class="imagencirculo">    <div class="divtexto">D8</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="D9" class="imagencirculo">    <div class="divtexto">D9</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="D10" class="imagencirculo">    <div class="divtexto">D10</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="D11" class="imagencirculo">    <div class="divtexto">D11</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="D12" class="imagencirculo">    <div class="divtexto">D12</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td>
+                    </td>
+                    <td><div id="D13" class="imagencirculo">    <div class="divtexto">D13</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="D14" class="imagencirculo">    <div class="divtexto">D14</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="D15" class="imagencirculo">    <div class="divtexto">D15</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+
+
+                    <td>
+                        <div class="txtguia">
+                            <div class="txtguia2"> D </div>
+                        </div>
+
+
+                    </td>
+                </tr> 
+                <tr>
+                    <td>
+                        
+                        <div class="txtguia">
+                            <div class="txtguia2">E </div>
+
+                        </div>
+
+
+                    </td>
+                    <td><div id="E1" class="imagencirculo">    <div class="divtexto">E1</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="E2" class="imagencirculo">    <div class="divtexto">E2</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="E3" class="imagencirculo">    <div class="divtexto">E3</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td>
+                    </td>
+                    <td><div id="E4" class="imagencirculo">    <div class="divtexto">E4</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="E5" class="imagencirculo">    <div class="divtexto">E5</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="E6" class="imagencirculo">    <div class="divtexto">E6</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="E7" class="imagencirculo">    <div class="divtexto">E7</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="E8" class="imagencirculo">    <div class="divtexto">E8</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="E9" class="imagencirculo">    <div class="divtexto">E9</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="E10" class="imagencirculo">    <div class="divtexto">E10</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="E11" class="imagencirculo">    <div class="divtexto">E11</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="E12" class="imagencirculo">    <div class="divtexto">E12</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td>
+                    </td>
+                    <td><div id="E13" class="imagencirculo">    <div class="divtexto">E13</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="E14" class="imagencirculo">    <div class="divtexto">E14</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="E15" class="imagencirculo">    <div class="divtexto">E15</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+
+                    <td>
+                        <div class="txtguia">
+                            <div class="txtguia2"> E </div>
+                        </div>
+
+
+                    </td>
+                </tr> 
+                <tr>
+                    <td>
+                        
+                        <div class="txtguia">
+                            <div class="txtguia2">F </div>
+
+                        </div>
+
+
+                    </td>
+                    <td><div id="F1" class="imagencirculo">    <div class="divtexto">F1</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="F2" class="imagencirculo">    <div class="divtexto">F2</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="F3" class="imagencirculo">    <div class="divtexto">F3</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td>
+                    </td>
+                    <td><div id="F4" class="imagencirculo">    <div class="divtexto">F4</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="F5" class="imagencirculo">    <div class="divtexto">F5</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="F6" class="imagencirculo">    <div class="divtexto">F6</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="F7" class="imagencirculo">    <div class="divtexto">F7</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="F8" class="imagencirculo">    <div class="divtexto">F8</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="F9" class="imagencirculo">    <div class="divtexto">F9</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="F10" class="imagencirculo">    <div class="divtexto">F10</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="F11" class="imagencirculo">    <div class="divtexto">F11</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="F12" class="imagencirculo">    <div class="divtexto">F12</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td>
+                    </td>
+                    <td><div id="F13" class="imagencirculo">    <div class="divtexto">F13</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="F14" class="imagencirculo">    <div class="divtexto">F14</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="F15" class="imagencirculo">    <div class="divtexto">F15</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+
+                    <td>
+                        <div class="txtguia">
+                            <div class="txtguia2"> F </div>
+                        </div>
+
+
+                    </td>
+                </tr> 
+                <tr>
+                    <td>
+                        
+                        <div class="txtguia">
+                            <div class="txtguia2">G </div>
+
+                        </div>
+
+
+                    </td>
+                    <td><div id="G1" class="imagencirculo">    <div class="divtexto">G1</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="G2" class="imagencirculo">    <div class="divtexto">G2</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="G3" class="imagencirculo">    <div class="divtexto">G3</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td>
+                    </td>
+                    <td><div id="G4" class="imagencirculo">    <div class="divtexto">G4</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="G5" class="imagencirculo">    <div class="divtexto">G5</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="G6" class="imagencirculo">    <div class="divtexto">G6</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="G7" class="imagencirculo">    <div class="divtexto">G7</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="G8" class="imagencirculo">    <div class="divtexto">G8</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="G9" class="imagencirculo">    <div class="divtexto">G9</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="G10" class="imagencirculo">    <div class="divtexto">G10</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="G11" class="imagencirculo">    <div class="divtexto">G11</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="G12" class="imagencirculo">    <div class="divtexto">G12</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td>
+                    </td>
+                    <td><div id="G13" class="imagencirculo">    <div class="divtexto">G13</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="G14" class="imagencirculo">    <div class="divtexto">G14</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="G15" class="imagencirculo">    <div class="divtexto">G15</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+
+
+                    <td>
+                        <div class="txtguia">
+                            <div class="txtguia2"> G </div>
+                        </div>
+
+
+                    </td>
+                </tr> 
+                <tr>
+                    <td>
+                        
+                        <div class="txtguia">
+                            <div class="txtguia2"> H </div>
+
+                        </div>
+
+
+                    </td>
+                    <td><div id="H1" class="imagencirculo">    <div class="divtexto">H1</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="H2" class="imagencirculo">    <div class="divtexto">H2</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="H3" class="imagencirculo">    <div class="divtexto">H3</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td>
+                    </td>
+                    <td><div id="H4" class="imagencirculo">    <div class="divtexto">H4</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="H5" class="imagencirculo">    <div class="divtexto">H5</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="H6" class="imagencirculo">    <div class="divtexto">H6</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="H7" class="imagencirculo">    <div class="divtexto">H7</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="H8" class="imagencirculo">    <div class="divtexto">H8</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="H9" class="imagencirculo">    <div class="divtexto">H9</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="H10" class="imagencirculo">    <div class="divtexto">H10</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="H11" class="imagencirculo">    <div class="divtexto">H11</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="H12" class="imagencirculo">    <div class="divtexto">H12</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td>
+                    </td>
+                    <td><div id="H13" class="imagencirculo">    <div class="divtexto">H13</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="H14" class="imagencirculo">    <div class="divtexto">H14</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="H15" class="imagencirculo">    <div class="divtexto">H15</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+
+                    <td>
+                    <div class="txtguia">
+                            <div class="txtguia2"> H </div>
+                        </div>
+
+
+                    </td>
+                </tr> 
+                <tr>
+                    <td>
+                        
+                        <div class="txtguia">
+                            <div class="txtguia2">I </div>
+
+                        </div>
+
+
+                    </td>
+                    <td><div id="I1" class="imagencirculo">    <div class="divtexto">I1</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="I2" class="imagencirculo">    <div class="divtexto">I2</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="I3" class="imagencirculo">    <div class="divtexto">I3</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td>
+                    </td>
+                    <td><div id="I4" class="imagencirculo">    <div class="divtexto">I4</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="I5" class="imagencirculo">    <div class="divtexto">I5</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="I6" class="imagencirculo">    <div class="divtexto">I6</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="I7" class="imagencirculo">    <div class="divtexto">I7</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="I8" class="imagencirculo">    <div class="divtexto">I8</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="I9" class="imagencirculo">    <div class="divtexto">I9</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="I10" class="imagencirculo">    <div class="divtexto">I10</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="I11" class="imagencirculo">    <div class="divtexto">I11</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="I12" class="imagencirculo">    <div class="divtexto">I12</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td>
+                    </td>
+                    <td><div id="I13" class="imagencirculo">    <div class="divtexto">I13</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="I14" class="imagencirculo">    <div class="divtexto">I14</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+                    <td><div id="I15" class="imagencirculo">    <div class="divtexto">I15</div>    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPsXdxbDwAFwAI+p27y6QAAAABJRU5ErkJggg=="     alt="" class="imagen"></div></td>
+
+
+                    <td>
+                        <div class="txtguia">
+                            <div class="txtguia2"> I </div>
+                        </div>
+
+
+                    </td>
+                </tr> 
+                
+
+            </tbody>
+            </table>
+            <div class="box-disponibility">
+                <div class="flex width-box">
+                    <div>
+                        <img th:src="@{/assets/icono.png}" alt="" class="image-icon-disponibility">
+                        Disponible
+                    </div>
+                    <div>
+                        <img th:src="@{/assets/icono.png}" alt="" class="image-icon-disponibility" style="background-color: blueviolet;">
+                        Ocupada
+                    </div>
+                    <div>
+                        <img th:src="@{/assets/icono.png}" alt="" class="image-icon-disponibility" style="background-color: red;">
+                        Seleccionada
+                    </div>
+                </div>
+                <div>
+                    <div style="margin-top: 1.5rem;" class="txt-selectec-sit">
+                        Asientos Seleccionados: <span class="txt-selectec-sit" id='imagenSeleccionada'></span> 
+                    </div>
+                </div> 
+            </div>
+            <th:block th:object="${pelicula}">
+            <a th:href="@{'comprar'}"><button onclick="GuardarAsientos()" class="buy-button" id="siguiente"> <span class="txt-buy" >Continuar</span> </button></a>
+            <a th:href="@{'entrada'}"><button class="buy-button" id="anterior" > <span class="txt-buy">Anterior</span> </button></a>
+            </th:block>
+            
+        </div> 
+    </div> 
+<form action="submit">
+   <input type='hidden' name='seleccionImagen' value='' />
+   </form>
+   <p></p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+<script src="/js/alert.js"> </script>
+   }
+
+</body>
+
+</html>

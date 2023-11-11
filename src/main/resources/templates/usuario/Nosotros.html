@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Sobre Nosotros</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+  <script src="https://kit.fontawesome.com/7a76b96ec6.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../css/UHF.css">
+  <link rel="stylesheet" href="../css/galeria.css">
+</head>
+
+<body id="top" style="background-color: transparent;padding-bottom: 8em;">
+  <header class="header">
+    <div class="barra">
+        <div class="barra_content centrar">
+            <a th:href="@{/}"><img class="barra_logo" th:src="@{/assets/EMPRESALOGO1.png}"  alt="LogoEmpresa"></a>
+            <ul class="nav">
+                <li><a th:href="@{/usuario/cartelera}" class="nav-link">Cartelera</a></li>
+                <li><a th:href="@{/usuario/ubicaciones}" class="nav-link">Cines</a></li>
+                <li><a th:href="@{/usuario/peliculas}" class="nav-link">Peliculas</a></li>
+                <li><a th:href="@{/usuario/nosotros}" class="nav-link-f">Nosotros</a></li>
+                <li class="user"><a th:href="@{/login}" class="nav-link-icon"><i class="fa-solid fa-user"></i>
+                        <ul sec:authorize="isAuthenticated()" class="subuser">
+                            <li><a><span sec:authentication="name">Username</span></a></li>
+                            <li sec:authorize="hasAuthority('ROLE_ADMIN')"><a th:href="@{/admin}">Administracion de
+                                    pagina</a></li>
+                            <li><a th:href="@{/logout}">Cerrar
+                                    sesión</a></li>
+                        </ul>
+                </li>
+                <li><a th:href="@{/usuario/contactanos}" class="nav-link-icon"><i class="fa-solid fa-phone"></i></a>
+                </li>
+            </ul>
+            <label class="barra_nav_toggle">
+              <i class="material-icons">menu</i>
+          </label>
+        </div>
+    </div>
+</header>
+
+  <div id="pageintro2" class="hoc clear" style="padding:10px;">
+    <!-- ################################################################################################ -->
+    <article>
+      <h3 class="heading" style="font-size: 30px;color: black; text-align: center;">Sobre Nosotros</h3>
+    </article>
+    <!-- ################################################################################################ -->
+  </div>
+
+  <div class="wrapper row3">
+    <main style="padding:20px;padding-bottom: 180px;" class="hoc container clear">
+      <!-- main body -->
+      <ul class="nospace group inspace-15" style="list-style: none;">
+        <li class="one_half first btmspace-50">
+          <article>
+            <h6 class="heading" style="font-size: 22px; color:maroon;">Nuestro Propósito</h6>
+            <p class="nospace" style="text-align: justify;">Ampliar aún más el liderazgo en el mercado de cines de Ica,
+              mejorando las reseñas por parte de nuestros consumidores.</p>
+          </article>
+        </li>
+        <li class="one_half btmspace-50">
+          <article>
+            <p class="nospace"><img alt style="max-width:50%" th:src="@{/assets/propoc.jpg}"></p>
+          </article>
+        </li>
+        <li class="one_half btmspace-50">
+          <article>
+            <h6 class="heading" style="font-size: 22px; color:maroon;">Nuestra Visión</h6>
+            <p class="nospace" style="text-align: justify;">Ser una empresa líder en el mercado de cines a nivel
+              nacional, logrando la aceptación
+              total del público peruano y ser reconocidos por nuestros carismáticos empleados, calidad en el servicio,
+              modernas instalaciones cinematográficas y una alta competitividad frente a nuestros contendores.</p>
+          </article>
+        </li>
+        <li class="one_half first btmspace-50">
+          <article>
+            <p class="nospace"><img alt style="max-width:50%" th:src="@{/assets/vision.jpg}"></p>
+          </article>
+        </li>
+        <li class="one_half first btmspace-50">
+          <article>
+            <h6 class="heading" style="font-size: 22px; color:maroon;">Nuestro Misión</h6>
+            <p class="nospace" style="text-align: justify;">Ser la mejor opción de entretenimiento fortaleciendo
+              nuestro liderazgo en la industria
+              Cinematográfica a nivel nacional,
+              ofreciendo diversión, innovación y un servicio estelar.</p>
+          </article>
+        </li>
+        <li class="one_half btmspace-50">
+          <article>
+            <p class="nospace"><img alt style="max-width:50%" th:src="@{/assets/mision5.jpg}"></p>
+          </article>
+        </li>
+      </ul>
+      <hr class="btmspace-40" style="margin-bottom: 30px;">
+      <h1 style="font-size: 35px;color: black;margin: auto; padding: 10px;"><b>Nuestros Cines</b></h1>
+      <ul class="nospace group inspace-15" style="list-style: none; display: flex; flex-direction: row;">
+        <li class="one_half first btmspace-50">
+          <article>
+            <h6 class="heading" style="font-size: 20px; color:maroon">Cinerama El Quinde</h6>
+            <p class="nospace"><img alt style="max-width:50%" th:src="@{/assets/cine-quinde.jpg}"></p>
+          </article>
+        </li>
+        <li class="one_half btmspace-50">
+          <article>
+            <h6 class="heading" style="font-size: 20px; color:maroon">Cinerama Plaza del Sol</h6>
+            <p class="nospace" style="margin-bottom: 60px;"><img alt style="max-width:50%" th:src="@{/assets/cine-pls.png}">
+            </p>
+          </article>
+        </li>
+      </ul>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="footer_social">
+      <a href="https://www.facebook.com/CINERAMAPDS" target="_blank" class="nav-link-icon"><i class="fa-brands fa-facebook"></i></a>
+      <a href="register.html" class="nav-link-icon"><i class="fa-brands fa-instagram"></i></a>
+      <a href="register.html" class="nav-link-icon"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+    <div class="footer_sections container">
+      <a href="index.html"><img class="barra_logo" th:src="@{/assets/EMPRESALOGO1.png}" alt="LogoEmpresa"></a>
+      <div class="footer_section">
+        <a href="#" class="footer_link">Privacidad</a>
+        <a th:href="@{/usuario/nosotros}" class="footer_link">Nosotros</a>
+        <a th:href="@{/usuario/cartelera}" class="footer_link">Cartelera</a>
+        <a th:href="@{/usuario/ubicaciones}" class="footer_link">Nuestros Cines</a>
+      </div>
+      <div class="footer_section">
+        <a th:href="@{/usuario/contactanos}" class="footer_link">Contactanos</a>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/UHF.js"></script>
+</body>
+
+</html>

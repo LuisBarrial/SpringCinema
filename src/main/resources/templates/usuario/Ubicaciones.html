@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://kit.fontawesome.com/7a76b96ec6.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cines</title>
+    <link rel="stylesheet" href="../css/ubicaciones.css">
+    <link rel="stylesheet" href="../css/UHF.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="barra">
+            <div class="barra_content centrar">
+                <a th:href="@{/}"><img class="barra_logo" th:src="@{/assets/EMPRESALOGO1.png}"  alt="LogoEmpresa"></a>
+                <ul class="nav">
+                    <li><a th:href="@{/usuario/cartelera}" class="nav-link">Cartelera</a></li>
+                    <li><a th:href="@{/usuario/ubicaciones}" class="nav-link">Cines</a></li>
+                    <li><a th:href="@{/usuario/peliculas}" class="nav-link">Peliculas</a></li>
+                    <li><a th:href="@{/usuario/nosotros}" class="nav-link-f">Nosotros</a></li>
+                    <li class="user"><a th:href="@{/login}" class="nav-link-icon"><i class="fa-solid fa-user"></i>
+                            <ul sec:authorize="isAuthenticated()" class="subuser">
+                                <li><a><span sec:authentication="name">Username</span></a></li>
+                                <li sec:authorize="hasAuthority('ROLE_ADMIN')"><a th:href="@{/admin}">Administracion de
+                                        pagina</a></li>
+                                <li><a th:href="@{/logout}">Cerrar
+                                        sesión</a></li>
+                            </ul>
+                    </li>
+                    <li><a th:href="@{/usuario/contactanos}" class="nav-link-icon"><i class="fa-solid fa-phone"></i></a>
+                    </li>
+                </ul>
+                <label class="barra_nav_toggle">
+                    <i class="material-icons">menu</i>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <div class="contenido">
+        <div class="titulo">
+            <H1>Nuestros Cines</H1>
+        </div>
+        <br>
+
+        <div class="cartas">
+            <div class="card">
+                <div class="face front">
+                    <img th:src="@{/assets/pds.jpg}">
+                    <h3>PLAZA DEL SOL</h3>
+                </div>
+                <div class="face back">
+                    <h3>Plaza del Sol</h3>
+                    <p>AV SAN MARTIN 727 CC PLAZA DEL SOL ICA-ICA-ICA</p>
+                    <div class="a"><a th:href="@{/usuario/cartelera}">Ver Cartelera</a></div>
+                    <div class="link">
+                        <a href="https://goo.gl/maps/PM6xxJFTRrHCST1T7" target="_blank"><span
+                                class="icon icon-location2"></span>Ubicacion</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="face front">
+                    <img th:src="@{/assets/quinde.jpg}">
+                    <h3>EL QUINDE</h3>
+                </div>
+                <div class="face back">
+                    <h3>El Quinde</h3>
+                    <p>AV LOS MAESTROS S/N CC EL QUINDE ICA-ICA-ICA</p>
+                    <div class="a"><a th:href="@{/usuario/cartelera}">Ver Cartelera</a></div>
+                    <div class="link">
+                        <a href="https://goo.gl/maps/y9MPkpfZDkHyEp489" target="_blank">Ubicacion</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer_social">
+            <a href="https://www.facebook.com/CINERAMAPDS" target="_blank" class="nav-link-icon"><i class="fa-brands fa-facebook"></i></a>
+            <a href="register.html" class="nav-link-icon"><i class="fa-brands fa-instagram"></i></a>
+            <a href="register.html" class="nav-link-icon"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+        <div class="footer_sections container">
+            <a href="index.html"><img class="barra_logo" th:src="@{/assets/EMPRESALOGO1.png}" alt="LogoEmpresa"></a>
+            <div class="footer_section">
+                <a href="#" class="footer_link">Privacidad</a>
+                <a th:href="@{/usuario/nosotros}" class="footer_link">Nosotros</a>
+                <a th:href="@{/usuario/cartelera}" class="footer_link">Cartelera</a>
+                <a th:href="@{/usuario/ubicaciones}" class="footer_link">Nuestros Cines</a>
+            </div>
+            <div class="footer_section">
+                <a th:href="@{/usuario/contactanos}" class="footer_link">Contactanos</a>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/UHF.js"></script>
+</body>
+
+</html>

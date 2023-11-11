@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/estilosAs.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,200&family=Roboto&display=swap"
+        rel="stylesheet">
+    <title>[[${pelicula.nombre}]] - Pago</title>
+</head>
+
+<body>
+    <header class="header-size">
+        <nav class="nav-icons-exit">
+            <div>
+                <a href=""><img th:src="@{/img/retroceder.png}" class="back-img" alt="imagen-retroceso"></a>
+            </div>
+            <div class="progress-bar">
+                <div class="progreso3" id="progreso">
+
+                </div>
+                <div class="circle">
+                    Entrada
+                </div>
+                <div class="circle">
+                    Asiento
+                </div>
+                <div class="circle active">
+                    Pago
+                </div>
+            </div>
+            <div>
+                <a th:href="@{'/usuario/peliculas/detalles'+'/'+${pelicula.id}}"><img th:src="@{/img/salida.png}"
+                        class="back-img" alt="imagen-retroceso"></a>
+            </div>
+
+        </nav>
+    </header>
+    <div class="dflex" th:object="${pelicula}">
+        <div id="bordeado">
+
+            <img class="imagenpeli" th:src="@{/assets/{filename}(filename=*{rutaPortada})}" th:alt="*{rutaPortada}">
+
+            <h4 th:text="*{nombre}"></h4>
+
+        </div>
+        <div id="sx" class="divTabla">
+            <div class="container-pay">
+                <div class="contenido">
+                    <h1>Detalle de compra</h1>
+
+                    <h2>Entradas
+                    </h2>
+                    <span id="txtdesciptionpay" class="txt-description">4</span>
+                    <br>
+                    <h2>Asientos
+                    </h2>
+                    <span id="txtasientos" class="txt-description">A1,A2,A3,A4</span>
+                    <div class="div-pay">
+                        <span class="txt-pay">TOTAL A PAGAR</span>
+                        <br>
+                        <span id="txtpay" class="txt-pay">s/20</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <form class="bodyd" action="#">
+                <div class="form-container">
+                    <div class="personal-information">
+                        <h1>Payment Information</h1>
+                    </div> <!-- end of personal-information -->
+
+                    <input id="column-left" type="text" name="first-name" placeholder="First Name" />
+                    <input id="column-right" type="text" name="last-name" placeholder="Surname" />
+                    <input id="cardNumber" required="required" type="text" name="number" placeholder="Card Number" />
+                    <input id="fv" type="text" required="required" name="expiry" placeholder="MM / YY" />
+                    <input id="column-right" required="required" style="width:96.5%!important;" type="text" name="cvc"
+                        placeholder="CCV" />
+                    <input id="input-field" type="email" name="email" required="required" autocomplete="on"
+                        maxlength="40" placeholder="Email" />
+
+                    <div class="terminos">
+                        <input required type="checkbox" class="radiob"> Aceptas los <a href="">Terminos y
+                            condiciones</a>
+                    </div>
+
+                    <th:block th:object="${pelicula}">
+                        <a href="#"><button onclick="registrarUsuarios()" class="buy-button2" id="siguiente"> <span
+                                    class="txt-buy">>Continuar</span> </button></a>
+                        <a th:href="@{'asiento'}"><button type="button" class="buy-button2" id="anterior"> <span
+                                    class="txt-buy">>Anterior</span> </button></a>
+                    </th:block>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+    <form action="submit">
+        <input type='hidden' name='seleccionImagen' value='' />
+    </form>
+    <p></p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script src="/js/alert.js"> </script>
+    <script src="/js/registrarAS.js"> </script>
+    <script src="/js/compra.js"> </script>
+
+</body>
+
+</html>

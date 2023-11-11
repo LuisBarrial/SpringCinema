@@ -1,0 +1,17 @@
+.containerproje {
+    background: url(images/CINERAMA.jpeg);
+    background-size:100% 550px;
+    background-repeat: no-repeat;
+    height: 540px;
+}
+
+.containerproje #prev{
+    position: absolute;
+}
+
+@media screen and (max-width:858px) {
+    .containerproje {
+        background-size:100% 370px;
+        height: 360px;
+    }
+}
